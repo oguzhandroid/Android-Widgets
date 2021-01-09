@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -39,5 +40,41 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                boolean toggleKontrol = toggleButton.isChecked();
+                if (isChecked && toggleKontrol){
+                    tvSonucYaz.setText("Switch : Aktif\nToggle : Aktif");
+                }else if (isChecked && !toggleKontrol){
+                    tvSonucYaz.setText("Switch : Aktif\nToggle : Pasif");
+                }else if (!isChecked && toggleKontrol){
+                    tvSonucYaz.setText("Switch : Pasif\nToggle : Aktif");
+                }else if (!isChecked && !toggleKontrol){
+                    tvSonucYaz.setText("Switch : Pasif\nToggle : Pasif");
+                }
+            }
+        });
+
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                boolean switchKontrol = aSwitch.isChecked();
+                if (isChecked && switchKontrol){
+                    tvSonucYaz.setText("Switch : Aktif\nToggle : Aktif");
+                }else if (isChecked && !switchKontrol){
+                    tvSonucYaz.setText("Switch : Pasif\nToggle : Aktif");
+                }else if (!isChecked && switchKontrol){
+                    tvSonucYaz.setText("Switch : Aktif\nToggle : Pasif");
+                }else if (!isChecked && !switchKontrol){
+                    tvSonucYaz.setText("Switch : Pasif\nToggle : Pasif");
+                }
+            }
+        });
+
+
+
+
     }
 }
