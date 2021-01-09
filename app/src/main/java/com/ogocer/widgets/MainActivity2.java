@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -27,5 +28,22 @@ public class MainActivity2 extends AppCompatActivity {
         btnIntentTo3 = findViewById(R.id.btnIntentTo3);
         tvRbSonuc = findViewById(R.id.tvRadioSonuc);
         tvCbSonuc = findViewById(R.id.tvCheckBoxSonuc);
+
+        rbFb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    tvRbSonuc.setText("FENERBAHÇE");
+                }
+            }
+        });
+        rbGs.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    tvRbSonuc.setText("GALATASARAY");
+                }
+            }
+        });
     }
 }
