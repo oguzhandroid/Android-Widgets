@@ -3,6 +3,7 @@ package com.ogocer.widgets;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.VideoView;
@@ -26,5 +27,21 @@ public class MainActivity4 extends AppCompatActivity {
         btnStop = findViewById(R.id.btnStop);
         btnResim1 = findViewById(R.id.btnResim1);
         btnResim2 = findViewById(R.id.btnResim2);
+
+
+        btnResim1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imgView.setImageResource(R.drawable.turkiye);
+            }
+        });
+        btnResim2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imgView.setImageResource(R.drawable.bosnahersek);
+            }
+        });
+
+
     }
 }
