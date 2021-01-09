@@ -43,5 +43,13 @@ public class MainActivity3 extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
             }
         });
+
+        btnOyVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float verilenOy = ratingBar.getRating();
+                tvPuan.setText("Puan : "+verilenOy);
+            }
+        });
     }
 }
