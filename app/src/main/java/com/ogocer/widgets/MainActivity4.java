@@ -2,6 +2,7 @@ package com.ogocer.widgets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +78,13 @@ public class MainActivity4 extends AppCompatActivity {
                 if (videoView.isPlaying()){
                     videoView.pause();
                 }
+            }
+        });
+
+        btnIntentto5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity4.this,MainActivity5.class));
             }
         });
 
