@@ -3,12 +3,29 @@ package com.ogocer.widgets;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
+    private CheckBox cbJava,cbKotlin;
+    private RadioButton rbFb,rbGs;
+    private Button btnCbSonuc,btnRbSonuc,btnIntentTo3;
+    private TextView tvRbSonuc,tvCbSonuc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        cbJava = findViewById(R.id.cbJava);
+        cbKotlin = findViewById(R.id.cbKotlin);
+        rbFb = findViewById(R.id.rbFenerbahce);
+        rbGs = findViewById(R.id.rbGalatasaray);
+        btnCbSonuc = findViewById(R.id.btnCheckBoxSonuc);
+        btnRbSonuc = findViewById(R.id.btnRadioSonuc);
+        btnIntentTo3 = findViewById(R.id.btnIntentTo3);
+        tvRbSonuc = findViewById(R.id.tvRadioSonuc);
+        tvCbSonuc = findViewById(R.id.tvCheckBoxSonuc);
     }
 }
