@@ -2,6 +2,7 @@ package com.ogocer.widgets;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,12 +23,13 @@ public class MainActivity4 extends AppCompatActivity {
         videoView = findViewById(R.id.videoView);
         btnIntentto5 = findViewById(R.id.btnIntentto5);
         btnVideoBaslat = findViewById(R.id.btnVideoBaslat);
-        btnVideoDurdur = findViewById(R.id.btnDurdur);
+        btnVideoDurdur = findViewById(R.id.btnVideoDurdur);
         btnVideoDevam = findViewById(R.id.btnVideoDevam);
         btnStop = findViewById(R.id.btnStop);
         btnResim1 = findViewById(R.id.btnResim1);
         btnResim2 = findViewById(R.id.btnResim2);
-
+        Uri adres = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video);
+        videoView.setVideoURI(adres);
 
         btnResim1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,43 @@ public class MainActivity4 extends AppCompatActivity {
                 imgView.setImageResource(R.drawable.bosnahersek);
             }
         });
+
+        btnVideoBaslat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (!videoView.isPlaying()){
+                    videoView.start();
+                }
+            }
+        });
+        btnVideoDurdur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (videoView.isPlaying()){
+                    videoView.pause();
+                }
+            }
+        });
+        btnVideoDevam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!videoView.isPlaying()){
+                    videoView.start();
+                }
+            }
+        });
+        btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (videoView.isPlaying()){
+                    videoView.pause();
+                }
+            }
+        });
+
 
 
     }
