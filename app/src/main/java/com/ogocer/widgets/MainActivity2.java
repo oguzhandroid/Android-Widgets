@@ -3,6 +3,7 @@ package com.ogocer.widgets;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -42,6 +43,24 @@ public class MainActivity2 extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
                     tvRbSonuc.setText("GALATASARAY");
+                }
+            }
+        });
+
+        btnCbSonuc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean javaSecim = cbJava.isChecked();
+                boolean kotlinSecim = cbKotlin.isChecked();
+
+                if (javaSecim && kotlinSecim){
+                    tvCbSonuc.setText("Bildiğiniz Diller : Java ve Kotlin");
+                }else if (javaSecim && !kotlinSecim){
+                    tvCbSonuc.setText("Bildiğiniz Diller : Java");
+                }else if (!javaSecim && kotlinSecim){
+                    tvCbSonuc.setText("Bildiğiniz Diller : Kotlin");
+                }else if (!javaSecim && !kotlinSecim){
+                    tvCbSonuc.setText("Bildiğiniz Diller : Boş");
                 }
             }
         });
