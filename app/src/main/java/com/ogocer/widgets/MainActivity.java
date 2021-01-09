@@ -3,6 +3,7 @@ package com.ogocer.widgets;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
@@ -28,5 +29,15 @@ public class MainActivity extends AppCompatActivity {
         btnIntent = findViewById(R.id.buttonIntent);
         toggleButton = findViewById(R.id.toggleButton);
         aSwitch = findViewById(R.id.switch1);
+
+        btnIsimAl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String isim = etIsim.getText().toString();
+                if (!isim.equals("")){
+                    tvIsimYaz.setText("İsminiz : "+isim);
+                }
+            }
+        });
     }
 }
